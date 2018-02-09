@@ -36,11 +36,11 @@ if [ "$1" = 'postgres' ]; then
 	    if [ "x$REPLICATE_FROM" == "x" ]; then
 		eval "gosu postgres initdb $POSTGRES_INITDB_ARGS"
 	    else
-            	until ping -c 1 -W 1 ${REPLICATE_FROM}
-            	do
-                	echo "Waiting for master to ping..."
-                	sleep 1s
-            	done
+            	# until ping -c 1 -W 1 ${REPLICATE_FROM}
+            	# do
+                # 	echo "Waiting for master to ping..."
+                # 	sleep 1s
+            	# done
             	until gosu postgres pg_basebackup -h ${REPLICATE_FROM} -D ${PGDATA} -U ${POSTGRES_USER} -vP -w -p 5432
             	do
                 	echo "Waiting for master to connect!!!!!!!!!!!!!!!!!!!!!"
