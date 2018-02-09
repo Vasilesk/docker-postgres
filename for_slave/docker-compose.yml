@@ -11,7 +11,7 @@ services:
       POSTGRES_USER: 'postgres'
       POSTGRES_PASSWORD: 'postgres'
       PGDATA: '/var/lib/postgresql/data/pgdata'
-      REPLICATE_FROM: '127.0.0.1'
+      REPLICATE_FROM: '192.168.1.187'
     volumes:
      - '/var/lib/postgresql/data'
     # expose:
