@@ -19,6 +19,8 @@ services:
     ports:
       - "5433:5433"
     network_mode: "host"
+    volumes:
+            - .:/var/host
     # networks:
     #   host: {}
     #   # hostnet: {}
